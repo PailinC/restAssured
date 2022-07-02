@@ -44,7 +44,7 @@ public class _01_introRestAssured {
         // Base url = https://api.octoperf.com
         // Full url = https://api.octoperf.com/public/users/login
         // Full url with Query params =
-        //          https://api.octoperf.com/public/users/login?password=Studyit29&username=jane.pc2022@gmail.com
+        //          https://api.octoperf.com/public/users/login?password=jane12345&username=jane.pc2022@gmail.com
 
 
         // Task: Make a HTTP: POST request with given
@@ -54,14 +54,14 @@ public class _01_introRestAssured {
         public void printResponse() {
                 RestAssured.given()
                         .when()
-                        .post("https://api.octoperf.com/public/users/login?password=Studyit29&username=jane.pc2022@gmail.com")
+                        .post("https://api.octoperf.com/public/users/login?password=jane12345&username=jane.pc2022@gmail.com")
                         .prettyPeek(); // Prints the whole response body and headers
         }
         @Test
         public void printResponsePrettyPrint() {
                 RestAssured.given()
                         .when()
-                        .post("https://api.octoperf.com/public/users/login?password=Studyit29&username=jane.pc2022@gmail.com")
+                        .post("https://api.octoperf.com/public/users/login?password=jane12345&username=jane.pc2022@gmail.com")
                         .prettyPrint(); // Prints the whole response body and headers
 
 
@@ -84,7 +84,7 @@ public class _01_introRestAssured {
         public void verifyStatusCode(){
                 RestAssured.given()
                         .when()
-                        .post("https://api.octoperf.com/public/users/login?password=test12&username=tla.jiraone@gmail.com")
+                        .post("https://api.octoperf.com/public/users/login?password=jane12345&username=jane.pc2022@gmail.com")
                         .then()
                         .assertThat()
                         .statusCode(200);
@@ -97,7 +97,7 @@ public class _01_introRestAssured {
         public void verifyContentType(){
                 RestAssured.given()
                         .when()
-                        .post("https://api.octoperf.com/public/users/login?password=test12&username=tla.jiraone@gmail.com")
+                        .post("https://api.octoperf.com/public/users/login?password=jane12345&username=jane.pc2022@gmail.com")
                         .then()
                         .assertThat()
                         .contentType(ContentType.XML);
